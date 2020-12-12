@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #3E3E3E;
+}
+
+.list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    color: #fff;
+    padding: 50px;
+}
+
+
+h2{
+    font-size: 30px;
+}
+
+p{
+    font-size: 20px;
+}
+
+@media (max-width: 1200px){
+    .list li{
+       padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1200 - 320)));
+    }
+    h2{
+        font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
+    }
+    p{
+        font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1200 - 320)));
+    }
+}
+
+/* 
+    * 20px это минимальный размер который нам нужен на разрешении 320px
+    * потом у нас идёт добавочное число где от изначального занчения которое мы указали
+      в стилях 50px например. Мы отнимаем минимальное это у нас 20px
+    *Всё это умножаем  
+    * От всего вьюпорта отнимаем минимальную ширину экрана)
+    * И делим на ширину контейнера за вычетом 320px
+*/
+
